@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: syfctrfbr-go-gitops
+  description: This is GitOps manifest for syfctrfbr-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=syfctrfbr-go
+    backstage.io/kubernetes-id: syfctrfbr-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: syfctrfbr-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:syfctrfbr-go
